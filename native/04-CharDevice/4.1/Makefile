@@ -1,4 +1,3 @@
-
 obj-m := char_driver.o
 
 KERNELDIR = /lib/modules/$(shell uname -r)/build
@@ -10,7 +9,6 @@ default:
 	gcc -o application application.c
 
 clean:
-
 	$(MAKE) -C $(KERNELDIR) M=$(PWD) clean
 	rm application
 

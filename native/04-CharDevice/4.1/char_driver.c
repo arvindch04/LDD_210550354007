@@ -1,8 +1,21 @@
+//Q:Write a character driver with open and close functionality .Test the driver by writing an application that opens and closes the device driver.When open or closed the open and close calls in driver should be executed 
+//
+
+
+
+//Includes
+
+#include<linux/init.h>
+#include<linux/module.h>
 #include<linux/kdev_t.h>
 #include<linux/types.h>
 #include<linux/fs.h>
 #include<linux/cdev.h>
 #include<linux/uaccess.h>
+
+MODULE_LICENSE("GPL");
+MODULE_AUTHOR("Ch.Aravind Kumar");
+
 
 #define NAME MyCharDevice
 
@@ -10,28 +23,22 @@
 //Function Prototypes
 int NAME_open(struct inode *inode, struct file *filp);
 int NAME_release(struct inode *inode, struct file *filp);
-//ssize_t NAME_write(stuct file *filp, const char __user *Ubuff, size_t count, loff_t *offp);
-//ssize_t NAME_read(stuct file *filp, const char __user *Ubuff, size_t count, loff_t *offp);
-//innt NAME_flush(tsruct file *filp);
 
 
 
-//Structure which would define the operations that driver provides
 
+//operations that the driver would provide
 
-struct file_operations fops 
+struct file_operations fops = 
 {
-	.owner = THIS_MODULE;
-	.open  = NAME_open;
-	.read  = NAME_read;
-	.write = NAME_write;
-        .release = NAME_release;
-        //.flush = NAME_flush;
-	};
+	.owner = THIS_MODULE,
+	.open  = NAME_open,
+        .release = NAME_release,
+      	};
 
 
 
-//structure for a character driver
+// character driver
 struct cdev *my_cdev;
 
 
@@ -62,7 +69,7 @@ static int __init CharDevice_init(void)
 
     result = cdev_add(my_cdev,Mydev,1);//Notify the kernel about the new device
     
-    if(result<0);
+    if(result<0)
     {
 	    printk(KERN_ALERT "\n the Char Device has not been created ...\n");
 	    unregister_chrdev_region(Mydev, 1);
@@ -105,6 +112,8 @@ int NAME_release(struct inode *inode, struct file *filp)
 }
 
 
+module_init(CharDevice_init);
+module_exit(CharDevice_exit);
 
 
 
