@@ -1,0 +1,1 @@
+cmd_/home/pi/device-drivers/native/03-EXPORTSYM-SIMPLE/add_function.mod := { echo  /home/pi/device-drivers/native/03-EXPORTSYM-SIMPLE/add_function.o;  echo; } > /home/pi/device-drivers/native/03-EXPORTSYM-SIMPLE/add_function.mod

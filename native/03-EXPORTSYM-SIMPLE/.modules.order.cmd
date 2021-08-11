@@ -1,0 +1,1 @@
+cmd_/home/pi/device-drivers/native/03-EXPORTSYM-SIMPLE/modules.order := {   echo /home/pi/device-drivers/native/03-EXPORTSYM-SIMPLE/average.ko;   echo /home/pi/device-drivers/native/03-EXPORTSYM-SIMPLE/add_function.ko; :; } | awk '!x[$$0]++' - > /home/pi/device-drivers/native/03-EXPORTSYM-SIMPLE/modules.order

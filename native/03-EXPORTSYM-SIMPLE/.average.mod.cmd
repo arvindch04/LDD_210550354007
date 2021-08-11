@@ -1,0 +1,1 @@
+cmd_/home/pi/device-drivers/native/03-EXPORTSYM-SIMPLE/average.mod := { echo  /home/pi/device-drivers/native/03-EXPORTSYM-SIMPLE/average.o;  echo; } > /home/pi/device-drivers/native/03-EXPORTSYM-SIMPLE/average.mod

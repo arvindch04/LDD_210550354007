@@ -1,0 +1,69 @@
+#include <linux/init.h>
+#include <linux/module.h>
+#include <linux/kernel.h>
+
+MODULE_LICENSE("GPL");
+MODULE_AUTHOR("Ch.Aravind kumar");
+
+
+
+static int parameter1 = 20;
+static int parameter2 = 10;
+//static char* string  
+
+
+module_param(parameter1, int, S_IRUGO);
+module_param(parameter2, int, S_IRUGO);
+module_param(string, charp, S_IRUGO);
+
+static int add(int a, int b)
+{
+	return(a+b);
+}
+
+
+static int sub(int a, int b)
+{
+	return(a-b);
+}
+
+static int div(int a, int b)
+{
+	return(a/b);
+}
+
+static int mul(int a, int b)
+{
+	return(a*b);
+}
+
+static int __init param_init(void)
+{
+	printk(KERN_ALERT "In init function");
+	printk(KERN_ALERT "\n displaying the addition result on screen: %d\n",add(parameter1,parameter2)); 	
+	printk(KERN_ALERT "\n displaying the substraction result on screen: %d\n",sub(parameter1,parameter2)); 
+	printk(KERN_ALERT "\n displaying the multiplication  result on screen: %d\n",mul(parameter1,parameter2)); 
+	printk(KERN_ALERT "\n displaying the division  result on screen: %d\n",div(parameter1,parameter2)); 
+	return 0;
+}
+
+
+
+
+static void __exit param_exit(void)
+{
+
+	printk(KERN_ALERT "Goodbye,int parameter printed\n");
+}
+
+
+module_init(param_init);
+module_exit(param_exit);
+
+	
+
+
+
+
+
+

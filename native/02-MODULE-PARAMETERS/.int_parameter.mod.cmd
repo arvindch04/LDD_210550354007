@@ -1,0 +1,1 @@
+cmd_/home/pi/device-drivers/native/02-MODULE-PARAMETERS/int_parameter.mod := { echo  /home/pi/device-drivers/native/02-MODULE-PARAMETERS/int_parameter.o;  echo; } > /home/pi/device-drivers/native/02-MODULE-PARAMETERS/int_parameter.mod

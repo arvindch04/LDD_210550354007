@@ -1,0 +1,1 @@
+cmd_/home/pi/device-drivers/native/02-MODULE-PARAMETERS/Module.symvers := sed 's/ko$$/o/' /home/pi/device-drivers/native/02-MODULE-PARAMETERS/modules.order | scripts/mod/modpost -m -a   -o /home/pi/device-drivers/native/02-MODULE-PARAMETERS/Module.symvers -e -i Module.symvers   -T -

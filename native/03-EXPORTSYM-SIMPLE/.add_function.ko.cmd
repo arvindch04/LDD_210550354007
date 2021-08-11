@@ -1,0 +1,1 @@
+cmd_/home/pi/device-drivers/native/03-EXPORTSYM-SIMPLE/add_function.ko := ld -r  -EL  --build-id=sha1  -T scripts/module.lds -o /home/pi/device-drivers/native/03-EXPORTSYM-SIMPLE/add_function.ko /home/pi/device-drivers/native/03-EXPORTSYM-SIMPLE/add_function.o /home/pi/device-drivers/native/03-EXPORTSYM-SIMPLE/add_function.mod.o;  true
