@@ -142,6 +142,8 @@ ssize_t NAME_write(struct file *filp, const char __user *UserBuffer, size_t coun
 	     printk(KERN_ALERT "\n ERROR WRITING ");
 	     value = EFAULT;
 	     return value;
+     }
+}
 
 
 

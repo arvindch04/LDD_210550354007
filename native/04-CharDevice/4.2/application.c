@@ -7,7 +7,7 @@ int main()
 {
 	int FileDesc;
 
-        char UserBuffer[] = "DATA DATA DATA DATA----------> KERNEL";
+        char UserBuffer[] = "DATA DATA Data --------------> kernel";
 	char KernelBuffer[100];
 
 
@@ -23,7 +23,7 @@ int main()
 	write(FileDesc,UserBuffer,sizeof(UserBuffer));
 	read(FileDesc,KernelBuffer,100);
 
-	printf("\nData which is read from the kernel is : %s ",KernelBuffer);
+	printf("\nData which is read from the kernel is : %s\n ",KernelBuffer);
 
 	close(FileDesc);
 }
