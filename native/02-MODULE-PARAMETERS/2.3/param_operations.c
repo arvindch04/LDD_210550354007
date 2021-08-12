@@ -1,84 +1,94 @@
 #include <linux/init.h>
 #include <linux/module.h>
 #include <linux/kernel.h>
+#include <linux/stat.h>
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Ch.Aravind kumar");
 
 
 
-static int parameter1 = 20;
-static int parameter2 = 10;
-static char* string = "module";
+
+static int  a  = 20;
+static int  b  = 10;
+static char* str = "";
+
+// each operator has been given a character pointer and later string comparison has been done for reuired operator parameter passing 
+// now you can insert module as $sudo insmod param_operations.ko str="mul" for multiplication operation
+//
+//
+static char* addp = "add";
+static char* subp = "sub";
+static char* mulp = "mul";
+static char* divp = "div";
 
 
-module_param(parameter1, int, S_IRUGO);
-module_param(parameter2, int, S_IRUGO);
-module_param(string, charp, S_IRUGO);
+module_param(a, int, S_IRUGO);
+module_param(b, int, S_IRUGO);
+module_param(str, charp, S_IRUGO);
 
 static int add(int a, int b)
 {
-	
-//	printk(KERN_ALERT "\n displaying the addition result on screen: %d\n", a+b); 
-return a+b;	
+        return a+b;	
 }
 
 
 static int sub(int a, int b)
-{
-//	printk(KERN_ALERT "\n displaying the substraction result on screen: %d\n",a-b); 
+{ 
 	return a-b;
 }
 
 static int div(int a, int b)
 {
-//	printk(KERN_ALERT "\n displaying the division  result on screen: %d\n",a/b); 
+ 
 	return a/b;
 }
 
 static int mul(int a, int b)
 {
  
-//	printk(KERN_ALERT "\n displaying the multiplication  result on screen: %d\n",a*b); 
+ 
 	return a*b;
 }
 
 static int __init param_init(void)
 {
-        int result;    
+           
 	printk(KERN_ALERT "In init function");
 
-	switch(string)
-	{ 
-		case 'add':
-		       result =	add(parameter1,parameter2);
-
-			break;
-
-		case 'sub':
-		       result =	sub(parameter1,parameter2);
-			break;
-
-		case 'mul':
-		      result = mul(parameter1,parameter2);
-			break;
-
-		case 'div':
-		    result = div(parameter1,parameter2);
-			break;
-
-		default:
-			printk(KERN_ALERT "\nInvalid operator");
+	if(strcmp(str,addp)==0)
+	{
+		printk("In %s function", str); 
+		printk(KERN_ALERT "\n displaying the addition result on screen: %d\n", add(a,b)); 
+        }
+	else if(strcmp(str,subp)==0)
+	{
+	
+		printk("In %s function", str); 
+      		printk(KERN_ALERT "\n displaying the substraction result on screen: %d\n",sub(a,b)); 
+ 
+	}
+	else if(strcmp(str,mulp)==0)
+	{
+		printk("In %s function", str); 
+		printk(KERN_ALERT "\n displaying the multiplication result on screen: %d\n", mul(a,b)); 
 
 	}
+	else if(strcmp(str,divp)==0)
+	{
+		printk("In %s function", str); 
+		printk(KERN_ALERT "\n displaying the division result on screen: %d\n",div(a,b)); 
 	
-     printk(KERN_ALERT "\n Displaying the result of requested operations between 10 & 20 :%d\n", result); 
+	}
+	else 
+	{
+		printk(KERN_ALERT "\n Invalid Operator");
+	}
 
 
 
-	return 0;
+		return 0;
 }
-
 
 
 

@@ -1,5 +1,5 @@
-param_operations.o: \
- /home/pi/device-drivers/native/02-MODULE-PARAMETERS/2.3/param_operations.c \
+char_driver.o: \
+ /home/pi/device-drivers/native/04-CharDevice/4.2/char_driver.c \
  include/linux/kconfig.h include/generated/autoconf.h \
  include/linux/compiler_types.h include/linux/compiler_attributes.h \
  include/linux/compiler-gcc.h include/linux/init.h \
@@ -132,4 +132,70 @@ param_operations.o: \
  include/linux/error-injection.h include/asm-generic/error-injection.h \
  include/linux/tracepoint-defs.h include/linux/static_key.h \
  include/linux/static_call_types.h arch/arm/include/asm/module.h \
- include/asm-generic/module.h
+ include/asm-generic/module.h include/linux/kdev_t.h \
+ include/uapi/linux/kdev_t.h include/linux/fs.h include/linux/wait_bit.h \
+ include/linux/dcache.h include/linux/rculist.h \
+ include/linux/rculist_bl.h include/linux/list_bl.h \
+ include/linux/bit_spinlock.h include/linux/lockref.h \
+ include/linux/stringhash.h include/linux/hash.h include/linux/path.h \
+ include/linux/list_lru.h include/linux/shrinker.h include/linux/pid.h \
+ include/linux/capability.h include/uapi/linux/capability.h \
+ include/linux/semaphore.h include/linux/fcntl.h \
+ include/uapi/linux/fcntl.h arch/arm/include/uapi/asm/fcntl.h \
+ include/uapi/asm-generic/fcntl.h include/uapi/linux/openat2.h \
+ include/linux/migrate_mode.h include/linux/percpu-rwsem.h \
+ include/linux/rcuwait.h include/linux/sched/signal.h \
+ include/linux/signal.h include/linux/signal_types.h \
+ include/uapi/linux/signal.h arch/arm/include/asm/signal.h \
+ arch/arm/include/uapi/asm/signal.h \
+ include/uapi/asm-generic/signal-defs.h \
+ arch/arm/include/uapi/asm/sigcontext.h \
+ arch/arm/include/generated/uapi/asm/siginfo.h \
+ include/uapi/asm-generic/siginfo.h include/linux/sched.h \
+ include/uapi/linux/sched.h include/linux/sem.h include/uapi/linux/sem.h \
+ include/linux/ipc.h include/linux/rhashtable-types.h \
+ include/uapi/linux/ipc.h arch/arm/include/generated/uapi/asm/ipcbuf.h \
+ include/uapi/asm-generic/ipcbuf.h \
+ arch/arm/include/generated/uapi/asm/sembuf.h \
+ include/uapi/asm-generic/sembuf.h include/linux/shm.h \
+ include/uapi/linux/shm.h include/uapi/asm-generic/hugetlb_encode.h \
+ arch/arm/include/generated/uapi/asm/shmbuf.h \
+ include/uapi/asm-generic/shmbuf.h arch/arm/include/asm/shmparam.h \
+ include/linux/kcov.h include/uapi/linux/kcov.h include/linux/plist.h \
+ include/linux/hrtimer.h include/linux/hrtimer_defs.h \
+ include/linux/timerqueue.h include/linux/seccomp.h \
+ include/uapi/linux/seccomp.h arch/arm/include/generated/asm/seccomp.h \
+ include/asm-generic/seccomp.h include/uapi/linux/unistd.h \
+ include/linux/resource.h include/uapi/linux/resource.h \
+ arch/arm/include/generated/uapi/asm/resource.h \
+ include/asm-generic/resource.h include/uapi/asm-generic/resource.h \
+ include/linux/latencytop.h include/linux/sched/prio.h \
+ include/linux/sched/types.h include/linux/task_io_accounting.h \
+ include/linux/posix-timers.h include/linux/alarmtimer.h \
+ include/linux/task_work.h include/uapi/linux/rseq.h \
+ include/linux/kcsan.h include/linux/sched/jobctl.h \
+ include/linux/sched/task.h include/linux/uaccess.h \
+ include/linux/fault-inject-usercopy.h include/linux/instrumented.h \
+ arch/arm/include/asm/uaccess.h arch/arm/include/asm/domain.h \
+ arch/arm/include/generated/asm/extable.h include/asm-generic/extable.h \
+ include/linux/cred.h include/linux/key.h include/linux/assoc_array.h \
+ include/linux/sched/user.h include/linux/ratelimit.h \
+ include/linux/rcu_sync.h include/linux/delayed_call.h \
+ include/linux/uuid.h include/uapi/linux/uuid.h include/linux/errseq.h \
+ include/linux/ioprio.h include/linux/sched/rt.h \
+ include/linux/iocontext.h include/linux/fs_types.h \
+ include/uapi/linux/fs.h include/uapi/linux/ioctl.h \
+ arch/arm/include/generated/uapi/asm/ioctl.h include/asm-generic/ioctl.h \
+ include/uapi/asm-generic/ioctl.h include/linux/quota.h \
+ include/linux/percpu_counter.h include/uapi/linux/dqblk_xfs.h \
+ include/linux/dqblk_v1.h include/linux/dqblk_v2.h \
+ include/linux/dqblk_qtree.h include/linux/projid.h \
+ include/uapi/linux/quota.h include/linux/nfs_fs_i.h include/linux/cdev.h \
+ include/linux/device.h include/linux/dev_printk.h \
+ include/linux/energy_model.h include/linux/sched/cpufreq.h \
+ include/linux/sched/topology.h include/linux/sched/idle.h \
+ include/linux/sched/sd_flags.h include/linux/ioport.h \
+ include/linux/klist.h include/linux/pm.h include/linux/overflow.h \
+ include/linux/device/bus.h include/linux/device/class.h \
+ include/linux/device/driver.h arch/arm/include/asm/device.h \
+ include/linux/pm_wakeup.h

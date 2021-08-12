@@ -1,1 +1,0 @@
-cmd_/home/pi/device-drivers/native/02-MODULE-PARAMETERS/int_parameter.ko := ld -r  -EL  --build-id=sha1  -T scripts/module.lds -o /home/pi/device-drivers/native/02-MODULE-PARAMETERS/int_parameter.ko /home/pi/device-drivers/native/02-MODULE-PARAMETERS/int_parameter.o /home/pi/device-drivers/native/02-MODULE-PARAMETERS/int_parameter.mod.o;  true

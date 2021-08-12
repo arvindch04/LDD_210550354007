@@ -1,0 +1,1 @@
+cmd_/home/pi/device-drivers/native/02-MODULE-PARAMETERS/2.2/modules.order := {   echo /home/pi/device-drivers/native/02-MODULE-PARAMETERS/2.2/int_parameter.ko; :; } | awk '!x[$$0]++' - > /home/pi/device-drivers/native/02-MODULE-PARAMETERS/2.2/modules.order
