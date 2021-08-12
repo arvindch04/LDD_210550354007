@@ -4,24 +4,23 @@
 
 
 MODULE_LICENSE("GPL");
+MODULE_AUTHOR("Ch.Aravind kumar");
 
 
-int HelloWorld_type=1;
 
 static int HelloWorld_add(int a, int b);
 
 static int __init hello_init(void)
 {
-	printk(KERN_ALERT "In init module .... The module parameter is %d\n", HelloWorld_type);
-	
-	printk(KERN_ALERT "Hello World\n");
+	printk(KERN_ALERT "In init module");
+	printk(KERN_ALERT "Hello World...In ADD module\n");
 	return 0;
 }
 
 
 static int HelloWorld_add(int a,int b)
 {
-	printk(KERN_ALERT "\nIn function Hello world_add of module ...ADD\n");
+	printk(KERN_ALERT "\nIn function Helloworld_add of module ...ADD\n");
 	return(a+b);
 }
 
@@ -29,7 +28,7 @@ EXPORT_SYMBOL_GPL(HelloWorld_add);
 
 static void __exit hello_exit(void)
 {
-	printk(KERN_ALERT "In cleanup module .... The module parameter is %d\n", HelloWorld_type);
+	printk(KERN_ALERT "In cleanupof ADD module");
 	printk(KERN_ALERT "Goodbye,World\n");
 }
 
