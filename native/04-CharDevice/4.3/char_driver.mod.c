@@ -30,13 +30,7 @@ __used __section("__versions") = {
 	{ 0x6091b333, "unregister_chrdev_region" },
 	{ 0x31ace3dd, "cdev_add" },
 	{ 0xa8881d43, "cdev_alloc" },
-	{ 0x3fd78f3b, "register_chrdev_region" },
-	{ 0x5f754e5a, "memset" },
-	{ 0x2cfde9a2, "warn_slowpath_fmt" },
-	{ 0xae353d77, "arm_copy_from_user" },
-	{ 0x86332725, "__stack_chk_fail" },
-	{ 0x51a910c0, "arm_copy_to_user" },
-	{ 0x8f678b07, "__stack_chk_guard" },
+	{ 0xe3ec2f2b, "alloc_chrdev_region" },
 	{ 0xc5850110, "printk" },
 	{ 0xb1ad28e0, "__gnu_mcount_nc" },
 };
@@ -44,4 +38,4 @@ __used __section("__versions") = {
 MODULE_INFO(depends, "");
 
 
-MODULE_INFO(srcversion, "E1B3CE177C6BD4EDD01A877");
+MODULE_INFO(srcversion, "3EB6D39F879C8AD656BF47A");

@@ -1,18 +1,18 @@
-#include<stdio.h>
+#include <stdio.h>
 #include <sys/types.h>
 #include <fcntl.h>
-#include<stdlib.h>
+#include <stdlib.h>
 
 int main()
 {
 	int FileDesc;
 
-        char UserBuffer[] = "DATA DATA Data --------------> kernel";
+        char UserBuffer[] = "It's me user buffer";
 	char KernelBuffer[100];
 
 
 
-	FileDesc=open("/dev/MyCharDevice", O_RDWR,0777);
+	FileDesc=open("/dev/my_char_device_stat", O_RDWR,0777);
 	if(FileDesc <0)
 	{
 		printf("\nError Opening Device \n");
