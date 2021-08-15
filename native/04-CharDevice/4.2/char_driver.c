@@ -131,6 +131,12 @@ ssize_t NAME_write(struct file *filp, const char __user *UserBuffer, size_t coun
 	     return value;
      
      }
+     else if(res > 0)
+     {
+	     printk(KERN_ALERT "\n Part Data Copied");
+	     value = (count - res);
+	     return value;
+     }
      else
      {
 	     printk(KERN_ALERT "\n ERROR WRITING ");
@@ -154,6 +160,12 @@ ssize_t NAME_read(struct file *filp, char __user *UserBuffer, size_t count, loff
     {
 	    printk(KERN_ALERT "\ndata copied to user's space\n");
 	    value = count;
+	    return value;
+    }
+    else if(res > 0)
+    {
+	    printk(KERN_ALERT "\n Part data available\n");
+	    value = (count-res);
 	    return value;
     }
 
