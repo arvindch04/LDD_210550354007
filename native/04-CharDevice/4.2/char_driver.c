@@ -1,4 +1,4 @@
-//Q:Write a character driver with open,read,write, close functionality .Test the driver by writing an application by reading data from the driver  and writing data to the driver
+//Q:Write a character driver with open,read,write, close functionality .Test the driver by writing an application by reading data from the driver  and writing data to the drive.
 
 
 
