@@ -158,7 +158,7 @@ ssize_t NAME_read(struct file *filp, char __user *UserBuffer, size_t count, loff
     res = copy_to_user((char *)UserBuffer,(const char *)KernelBuffer,sizeof(KernelBuffer));
     if(res ==0)
     {
-	    printk(KERN_ALERT "\ndata copied to user's space\n");
+	    printk(KERN_ALERT "\ndata read successfully\n");
 	    value = count;
 	    return value;
     }
