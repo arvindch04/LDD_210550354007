@@ -1,0 +1,1 @@
+cmd_/home/pi/device-drivers/native/05-Advanced-Char-drivers/5.1_and_5.2/Module.symvers := sed 's/ko$$/o/' /home/pi/device-drivers/native/05-Advanced-Char-drivers/5.1_and_5.2/modules.order | scripts/mod/modpost -m -a   -o /home/pi/device-drivers/native/05-Advanced-Char-drivers/5.1_and_5.2/Module.symvers -e -i Module.symvers   -T -
