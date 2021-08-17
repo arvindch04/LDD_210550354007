@@ -1,3 +1,5 @@
+//Explore kernel timers. Write a module program that uses the kernel timer and generates some output at regular intervals of time.
+
 #include <linux/kernel.h>
 #include <linux/init.h>
 #include <linux/module.h>
