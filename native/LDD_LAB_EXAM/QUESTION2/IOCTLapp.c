@@ -34,7 +34,7 @@ int main()
 		switch(opt)
 		{
 			case 1:
-				res=ioctl(fd, NAME_IOCTL_STAT);
+				res=ioctl(fd, NAME_IOCTL_STAT,&dat);
 				break;
 
 				}
