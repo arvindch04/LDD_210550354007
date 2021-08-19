@@ -70,26 +70,26 @@ static void __exit mychardev_exit(void)
     unregister_chrdev_region(dev,MAX_DEV);
 }
 
-static int mychardev_open(struct inode *inode, struct file *file)
+static int NAME_open(struct inode *inode, struct file *file)
 {
     printk("MYCHARDEV: Device open\n");
     return 0;
 }
 
-static int mychardev_release(struct inode *inode, struct file *file)
+static int NAME_release(struct inode *inode, struct file *file)
 {
     printk("MYCHARDEV: Device close\n");
     return 0;
 }
 
 
-static ssize_t mychardev_read(struct file *file, char __user *buf, size_t count, loff_t *offset)
+static ssize_t NAME_read(struct file *file, char __user *buf, size_t count, loff_t *offset)
 {
     printk("In the read module");
     return count;
 }
 
-static ssize_t mychardev_write(struct file *file, const char __user *buf, size_t count, loff_t *offset)
+static ssize_t NAME_write(struct file *file, const char __user *buf, size_t count, loff_t *offset)
 {
 	printk("In the write module");
     return count;
