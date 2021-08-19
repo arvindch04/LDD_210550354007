@@ -10,7 +10,7 @@
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Ch.Aravind Kumar");
-MODULE_DESCRIPTION("Kernel Synchronization Mechanisms for Multiple devices");
+MODULE_DESCRIPTION("Kernel Synchronization Mechanisms for Multiple devices.");
 
 #define MAX_DEV 2
 #define NAME my_char_device_stat
