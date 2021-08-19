@@ -15,10 +15,10 @@ MODULE_DESCRIPTION("Kernel Synchronization Mechanisms for Multiple devices");
 #define MAX_DEV 2
 #define NAME my_char_device_stat
 
-static int mychardev_open(struct inode *inode, struct file *file);
-static int mychardev_release(struct inode *inode, struct file *file);
-static ssize_t mychardev_read(struct file *file, char __user *buf, size_t count, loff_t *offset);
-static ssize_t mychardev_write(struct file *file, const char __user *buf, size_t count, loff_t *offset);
+static int NAME_open(struct inode *inode, struct file *file);
+static int NAME_release(struct inode *inode, struct file *file);
+static ssize_t NAME_read(struct file *file, char __user *buf, size_t count, loff_t *offset);
+static ssize_t NAME_write(struct file *file, const char __user *buf, size_t count, loff_t *offset);
 
 static const struct file_operations mychardev_fops = {
     .owner      = THIS_MODULE,
