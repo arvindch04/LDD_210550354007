@@ -10,7 +10,7 @@
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Ch.Aravind Kumar");
-MODULE_DESCRIPTION("character driver that implements the ioctl functionality to demonstrate the calculator functionality");
+MODULE_DESCRIPTION("character driver that implements the ioctl functionality to check stats of read write operations");
 
 
 #define NAME my_char_device_stat
