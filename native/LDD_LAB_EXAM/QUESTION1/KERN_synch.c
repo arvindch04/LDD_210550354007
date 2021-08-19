@@ -49,9 +49,6 @@ static int __init mychardev_init(void)
 
     dev_major = MAJOR(dev);
 
-    mychardev_class = class_create(THIS_MODULE, "mychardev");
-    mychardev_class->dev_uevent = mychardev_uevent;
-
     for (i = 0; i < MAX_DEV; i++) {
         cdev_init(&mychardev_data[i].cdev, &mychardev_fops);
         mychardev_data[i].cdev.owner = THIS_MODULE;
