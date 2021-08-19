@@ -39,11 +39,13 @@ static struct mychar_device_data mychardev_data[MAX_DEV];
 
  char KernelBuffer[] = "It's me Kernel Buffer";
 
+dev_t dev;
+
 
 static int __init mychardev_init(void)
 {
     int err, i;
-    dev_t dev;
+    
 
     err = alloc_chrdev_region(&dev, 0, MAX_DEV, "mychardev");
 
