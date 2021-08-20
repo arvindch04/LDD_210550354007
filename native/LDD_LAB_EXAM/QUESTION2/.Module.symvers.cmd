@@ -1,0 +1,1 @@
+cmd_/home/pi/device-drivers/native/LDD_LAB_EXAM/QUESTION2/Module.symvers := sed 's/ko$$/o/' /home/pi/device-drivers/native/LDD_LAB_EXAM/QUESTION2/modules.order | scripts/mod/modpost -m -a   -o /home/pi/device-drivers/native/LDD_LAB_EXAM/QUESTION2/Module.symvers -e -i Module.symvers   -T -

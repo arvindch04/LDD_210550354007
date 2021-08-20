@@ -8,11 +8,11 @@ int main()
 	int FileDesc;
 
         char UserBuffer[] = "It's me user buffer";
-//	char KernelBuffer[100];
+	char KernelBuffer[100];
 
 
 
-	FileDesc=open("/dev/my_char_device_stat", O_RDWR,0777);
+	FileDesc=open("/dev/MyCharDevice_stat", O_RDWR,0777);
 	if(FileDesc <0)
 	{
 		printf("\nError Opening Device \n");

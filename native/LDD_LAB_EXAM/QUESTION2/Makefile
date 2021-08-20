@@ -6,12 +6,12 @@ PWD := $(shell pwd)
 
 default:
 	$(MAKE) -C $(KERNELDIR) M=$(PWD) modules
-	gcc -o readapp readapp.c
+	gcc -o writeapp writeapp.c
 	gcc -o IOCTLapp IOCTLapp.c
 
 clean:
 	$(MAKE) -C $(KERNELDIR) M=$(PWD) clean
-	rm readapp
+	rm writeapp
 	rm IOCTLapp
 
 install:

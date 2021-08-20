@@ -1,0 +1,1 @@
+cmd_/home/pi/device-drivers/native/LDD_LAB_EXAM/QUESTION2/IOCTL.ko := ld -r  -EL  --build-id=sha1  -T scripts/module.lds -o /home/pi/device-drivers/native/LDD_LAB_EXAM/QUESTION2/IOCTL.ko /home/pi/device-drivers/native/LDD_LAB_EXAM/QUESTION2/IOCTL.o /home/pi/device-drivers/native/LDD_LAB_EXAM/QUESTION2/IOCTL.mod.o;  true

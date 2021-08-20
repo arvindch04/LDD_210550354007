@@ -13,7 +13,7 @@ MODULE_AUTHOR("Ch.Aravind Kumar");
 MODULE_DESCRIPTION("character driver that implements the ioctl functionality to check stats of read write operations");
 
 
-#define NAME my_char_device_stat
+#define NAME MyCharDevice_stat
 
 
 //Function Prototypes
@@ -46,7 +46,7 @@ struct cdev *my_cdev;
 
 
 
-
+struct stats write;
 
 
 //Init Module
@@ -113,7 +113,7 @@ int NAME_release(struct inode *inode, struct file *filp)
 
 ssize_t NAME_read(struct file *filp, char __user *UserBuffer, size_t count, loff_t *offp)
 {
- struct stats KernelBuffer[] = "It's me Kernel Buffer";
+  char KernelBuffer[] = "It's me Kernel Buffer";
  int res;
  ssize_t value;
  struct stats read;
@@ -124,7 +124,7 @@ ssize_t NAME_read(struct file *filp, char __user *UserBuffer, size_t count, loff
 	    printk(KERN_ALERT "\ndata read successfully\n");
 
 	     read.size = count;
-	     read.buff = KernelBuffer;
+	   strcpy(read.buff, KernelBuffer);
 	     read.r_w = 0;
 
 	    return value;
@@ -148,10 +148,10 @@ ssize_t NAME_read(struct file *filp, char __user *UserBuffer, size_t count, loff
 
 ssize_t NAME_write(struct file *filp, const char __user *UserBuffer, size_t count, loff_t *offp)
 {
-     struct stats KernelBuffer[100];
+     char KernelBuffer[100];
      int res;
      ssize_t value;
-     struct stats write;
+   //  struct stats write;
 
      res = copy_from_user((char *)KernelBuffer, (char *)UserBuffer , count);
 
@@ -160,8 +160,8 @@ ssize_t NAME_write(struct file *filp, const char __user *UserBuffer, size_t coun
 	     printk(KERN_ALERT"\nUser's Message : %s\n",KernelBuffer);
 	     printk(KERN_ALERT "\n Number of Bytes written: %d\n",count);
 	     write.size = count ;
-	     write.buff = KernelBuffer;
-             write.r_w = 0;
+	     strcpy(write.buff, KernelBuffer);
+             write.r_w = 1;
 	     return value;
      
      }
@@ -185,11 +185,11 @@ static long NAME_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
         {
 		case NAME_IOCTL_STAT:
 		{
-                	struct stats GETSTATS;
+                //	struct stats write;
 		
 
 	
-			if (copy_to_user((struct stats*)arg, &GETSTATS,sizeof(struct stats)))
+			if (copy_to_user((struct stats*)arg, &write,sizeof(struct stats)))
 				return -EFAULT;
 			printk(KERN_ALERT "\n stats sent to IOCTL functionality \n");
 			return 0;

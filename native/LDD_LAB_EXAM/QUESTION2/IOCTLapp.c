@@ -27,7 +27,7 @@ int main()
 
 	while(1)
 	{
-		printf("\n\nPress 1 for GETSTATS" );
+		printf("\n\nPress 1 for GETSTATS: " );
 		scanf("%d", &opt);
 
 	
